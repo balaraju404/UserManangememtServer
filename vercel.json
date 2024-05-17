@@ -1,19 +1,20 @@
 {
     "version": 2,
+    "name": "UserManagementAPI",
     "builds": [
         {
-            "src": "./src/index.js",
+            "src": "index.js",
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)",
-            "dest": "/src/index.js"
-        },
-        {
-            "src": ".*",
-            "dest": "/src/index.js"
+            "src": "/(.*)",
+            "dest": "/"
         }
-    ]
+    ],
+    "env": {
+        "NODE_ENV": "production",
+        "PORT": 3000
+    }
 }
