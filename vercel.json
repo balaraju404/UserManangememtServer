@@ -1,6 +1,6 @@
 {
     "version": 2,
-    "name": "UserManagementAPI",
+    "name": "user-manangememt-server",
     "builds": [
         {
             "src": "index.js",
@@ -15,6 +15,6 @@
     ],
     "env": {
         "NODE_ENV": "production",
-        "PORT": 3000
+        "PORT": "3000"
     }
 }
