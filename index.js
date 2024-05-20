@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const router = require('./router/routing');
+const router = require('./src/router/routing');
 
 const app = express();
 
@@ -21,18 +21,9 @@ app.use((err, req, res, next) => {
     res.status(500).send('Internal Server Error');
 });
 
-// Graceful shutdown
-process.on('SIGINT', () => {
-    console.log('Closing server and database connection...');
-    // Assuming connection object is imported from another file
-    connection.end(() => {
-        console.log('Database connection closed');
-        process.exit(0);
-    });
-});
 
 // Server start
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

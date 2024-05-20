@@ -8,8 +8,4 @@ router.get('/users', fetch)
 router.patch('/users/:id', update)
 router.delete('/users/:id', deleteUser)
 
-router.get('/',(req,res)=>{
-    res.send('hello world')
-})
-
 module.exports = router;
